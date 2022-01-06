@@ -1,0 +1,113 @@
+"test1":
+	{"awsS3FolderName":"Noodle41641451118273",
+	"categories":["spicy"],
+	"description":"Phasellus id dapibus magna. Quisque gravida rhoncus dui nec placerat. Donec bibendum nisl quis dignissim semper. Donec cursus placerat ligula scelerisque malesuada. Ve",
+	"image":"https://i.picsum.photos/id/696/250/150.jpg?hmac\u003dlV6cSFhOR38MQIFSRZUSzlG4UADhjE55KY83jhMnnpM",
+	"imageFileName":"",
+	"owner":"andyzhangff",
+	"recipeId":42,
+	"time":20,
+	"title":"Noodle4"
+}
+
+"test2":
+	{"awsS3FolderName":"Noodle41641451118273",
+	"categories":["spicy", "Chicken"],
+	"description":"Phasellus id dapibus magna. Quisque gravida rhoncus dui nec placerat. Donec bibendum nisl quis dignissim semper. Donec cursus placerat ligula scelerisque malesuada. Ve andy...",
+	"image":"https://i.picsum.photos/id/696/250/150.jpg?hmac\u003dlV6cSFhOR38MQIFSRZUSzlG4UADhjE55KY83jhMnnpM",
+	"imageFileName":"",
+	"owner":"andyzhangff",
+	"recipeId":24,
+	"time":20,
+	"title":"Noodle4"
+}
+
+function compareTitle(objectA, objectB): Map {"result": Boolean, "diffKeys": List<String>}
+
+	val diffKeys = list()
+	val result = objectA compare with objectB
+
+	if (result is true) {
+			return "completely the same, no change is needed!"
+	} else {
+		for (key, value) in objectA:
+			if objectA[key] is instance of String{
+				if (objectA[key] != objectB[key]) {
+					diffKeys.add(key)
+				}
+			} else if (objectA[key] is instance of List){
+				if (how to compare list is different) {
+					diffKeys.add(key)
+				}
+			}
+	}
+	return map {"result": result, "diffKeys": diffKeys}
+
+----------------------------------------------------------------------------------------------------------------
+	action: need to add ingredient id back, the only key to do the change 
+	
+"ingredientA":[
+	{"container":"gram","id":"24a2224c-bb4b-4ad8-8ea5-e43e55a5fa9d","ingredient":"pepper","quantity":77},
+	{"container":"kilo","id":"6360192f-e320-4f89-becc-2085d56e290b","ingredient":"pepper","quantity":22}
+	]
+
+
+"ingredientB":[
+	{"container":"kilo","id":"6360192f-e320-4f89-becc-2085d56e290b","ingredient":"pepper","quantity":22},
+	{"container":"gram","id":"24a2224c-bb4b-4ad8-8ea5-e43e55a5fa9d","ingredient":"salt","quantity":17},
+	{"container":"piese","id":"24a2224c-bb4b-4ad8-8ea5-e43e55a5aaa","ingredient":"orange","quantity":2},
+	]
+	
+function compareIngredient(ingredientsA, ingredientsB): Map {"result": Boolean, "ingredientIdToDeleteInIngredientsA":List<Int>, "ingredientIdToAddInIngredientsB": List<String> }
+
+	val ingredientAIds = list()
+	val ingredientBIds = list()
+	val result = ingredientsA compare with ingredientsB
+	
+	if (result is the same):
+		return Map {"result": True, "ingredientIdToDeleteInIngredientsA":null, "ingredientIdToAddInIngredientsB":null)
+	else:
+		for (ingredientA in ingredientsA):
+			for (ingredientB in ingredientsB):
+				if (ingredientA.container != ingredientB.container or ingredientA.ingredient != ingredientB.ingredient or
+					ingredientA.quantity != ingredientB.quantity): 
+				
+					ingredientAIds.add(ingredientA.id)
+					ingredientBIds.add(ingredientB.id)
+					
+		return Map {"result": False, "ingredientIdToDeleteInIngredientsA":ingredientAIds, "ingredientIdToAddInIngredientsB":ingredientBIds)
+	
+------------------------------------------------------------------------------------------------------------------------------
+
+"stepsA":[
+	{	"description":"he majority have suffered alteration in some form, by injected humour, or randomised",
+		"id":"a1381611-746c-46d1-98ef-6fe6ede39091",
+		"image":"",
+		"imageFileName":"",
+		"step_number":1},
+	{	"description":"going to use a passage of Lorem Ipsum, you need to be sure there isn\u0027t anything embar",
+		"id":"633ff0c1-7d48-4737-86c6-de16ef7490bb",
+		"image":"https://i.picsum.photos/id/211/200/200.jpg?hmac\u003dVJ4wl95YuQJMvM_1O83L3nSfTn20OxaVfWe0wNMZrIc",
+		"imageFileName":"",
+		"step_number":2}
+	]
+	
+"stepsB":[
+	{	"description":"he majority have suffered alteration in some form, by injected humour, or randomised",
+		"id":"a1381611-746c-46d1-98ef-6fe6ede39091",
+		"imageFileName":"",
+		"image":"",
+		"step_number":1},
+	{	"description":"going to use a passage of Lorem Ipsum, you need to be sure there isn\u0027t anything embar",
+		"id":"633ff0c1-7d48-4737-86c6-de16ef7490bb",
+		"image":"https://i.picsum.photos/id/211/200/200.jpg?hmac\u003dVJ4wl95YuQJMvM_1O83L3nSfTn20OxaVfWe0wNMZrIc",
+		"imageFileName":"",
+		"step_number":2}
+	]
+
+	
+
+	
+
+	
+	
