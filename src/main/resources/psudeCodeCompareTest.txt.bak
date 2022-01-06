@@ -113,26 +113,4 @@ function extractStepPictures(stepsParam): Map{"hasPicture":Boolean, "stepNumber"
 	
 	return Object(hasPicture, stepNumberList, stepImageList)
 	
-function compareNewSteps(newSteps, oldSteps): Map{"Match":Boolean, “StepNumberToUpload”: List<Int>, "StepNumberToChange": List<Int>, StepContentToChange: List<String>}
-	
-	for(newStep in newSteps):
-		for(oldStep in oldSteps):
-		
-			if newStep.image is not blank:
-				if newStep.image is in oldStep Picture list:
-					if newStep.description and imageFileName, step_number is not the same as oldStep:
-						update the different part change
-				else
-					add the new record with picture
-			else
-				if all the step attribute is not the same:
-					add the new record text only
-			
-			if oldStep.image is not blank：
-				if oldStep.image is not in oldStep Picture list:
-					remove the picture from aws and the whole record
-			else
-				if all the step attribute is not the same:
-					delete the new record text only
-	
 	
